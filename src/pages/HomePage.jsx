@@ -1,7 +1,9 @@
+import Hero from '../components/Hero';
+
 const HomePage = () => {
   return (
     <>
-      <p className="text-red-500">HomePage</p>
+      <Hero />
     </>
   );
 };

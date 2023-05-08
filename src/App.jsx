@@ -4,8 +4,7 @@ import DetailArticlePage from './pages/DetailArticlePage';
 
 function App() {
   return (
-    <div className="px-16">
-      <p>nyenye</p>
+    <div className="">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailArticlePage />} />

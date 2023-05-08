@@ -1,11 +1,16 @@
-import './App.css';
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import DetailArticlePage from './pages/DetailArticlePage';
 
 function App() {
   return (
-    <>
-      <div></div>
-      <h1 className="text-blue-500">Vite + React</h1>
-    </>
+    <div className="px-16">
+      <p>nyenye</p>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/detail/:id" element={<DetailArticlePage />} />
+      </Routes>
+    </div>
   );
 }
 

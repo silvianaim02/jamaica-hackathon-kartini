@@ -5,6 +5,7 @@ import api from '../utils/api';
 import ArticleCardList from '../components/ArticleCardList';
 import JoinCommunityCard from '../components/JoinCommunityCard';
 import { useSearchParams } from 'react-router-dom';
+import Navbar from '../components/navbar';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -58,6 +59,7 @@ const HomePage = () => {
 
   return (
     <>
+      <Navbar />
       <Hero
         setArticles={setArticles}
         searchField={searchField}
@@ -80,7 +82,9 @@ const HomePage = () => {
         <section className="w-full md:w-2/3 flex flex-col items-center px-3">
           {
             <ArticleCardList
-              articles={searchField !== ""? resultSearch : resultCategory || articles}
+              articles={
+                searchField !== '' ? resultSearch : resultCategory || articles
+              }
               loading={loading}
               setLoading={setLoading}
               onSearch={updateKeywordUrlSearchParams}

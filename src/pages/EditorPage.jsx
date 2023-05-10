@@ -1,23 +1,35 @@
-import ReactQuill from "react-quill";
+import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import Navbar from "../components/navbar";
-import { BiPlay } from "react-icons/bi";
+import Navbar from '../components/Navbar';
+import { BiPlay } from 'react-icons/bi';
 const modules = {
-    toolbar: [
-      [{ 'header': [1, 2, false] }],
-      ['bold', 'italic', 'underline','strike', 'blockquote'],
-      [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
-      ['link', 'image'],
-      ['clean']
+  toolbar: [
+    [{ header: [1, 2, false] }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [
+      { list: 'ordered' },
+      { list: 'bullet' },
+      { indent: '-1' },
+      { indent: '+1' },
     ],
-  };
+    ['link', 'image'],
+    ['clean'],
+  ],
+};
 
-  const formats = [
-    'header',
-    'bold', 'italic', 'underline', 'strike', 'blockquote',
-    'list', 'bullet', 'indent',
-    'link', 'image'
-  ]
+const formats = [
+  'header',
+  'bold',
+  'italic',
+  'underline',
+  'strike',
+  'blockquote',
+  'list',
+  'bullet',
+  'indent',
+  'link',
+  'image',
+];
 
 const EditorPage = () => {
   return (
@@ -42,13 +54,13 @@ const EditorPage = () => {
             placeholder="React, PHP, Python, atau lainnya"
             className="border-b-2 border-gray-300 p-2 rounded-md hover:border-accent-2 focus:outline-none focus:ring-2 focus:ring-accent-2 transition duration-300"
           />
-          
+
           {/*<input type="file" className="border p-2 border-gray-300 rounded-md hover:border-accent-2" />*/}
           <ReactQuill modules={modules} formats={formats} />
         </form>
       </div>
     </>
   );
-}
+};
 
 export default EditorPage;

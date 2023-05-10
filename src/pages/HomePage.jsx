@@ -5,7 +5,7 @@ import api from '../utils/api';
 import ArticleCardList from '../components/ArticleCardList';
 import JoinCommunityCard from '../components/JoinCommunityCard';
 import { useSearchParams } from 'react-router-dom';
-import Navbar from '../components/navbar';
+import Navbar from '../components/Navbar';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);

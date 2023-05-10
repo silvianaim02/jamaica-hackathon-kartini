@@ -1,18 +1,42 @@
-import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { articleItemPropTypes } from './ArticleCardItem';
 
-const SearchBar = ({ setSearchField, onSearch }) => {
-  const [onTyping, setOnTyping] = useState('');
-
-  const onChange = (e) => {
+const SearchBar = ({
+  setSearchField,
+  onSearch,
+  setOnTyping,
+  onTyping,
+  setLoading,
+  setCategoryPick,
+}) => {
+  function handleSubmit(e) {
+    event.preventDefault();
+    setLoading(true);
     setOnTyping(e.target.value);
     onSearch(e.target.value);
     setSearchField(e.target.value);
+    setTimeout(() => {
+      setLoading(false);
+    }, 350);
+  }
+  const onChange = (e) => {
+    setLoading(true);
+    setOnTyping(e.target.value);
+    onSearch(e.target.value);
+    setSearchField(e.target.value);
+    setCategoryPick('');
+    setTimeout(() => {
+      setLoading(false);
+    }, 350);
   };
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      handleSubmit(e);
+    }
+  }
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label
         // for="default-search"
         className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -39,6 +63,7 @@ const SearchBar = ({ setSearchField, onSearch }) => {
         </div>
         <input
           onChange={onChange}
+          onKeyDown={handleKeyDown}
           value={onTyping}
           type="search"
           id="default-search"
@@ -56,6 +81,10 @@ SearchBar.propTypes = {
   setSearchField: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired,
   setArticles: PropTypes.func.isRequired,
+  onTyping: PropTypes.func.isRequired,
+  setOnTyping: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
+  setCategoryPick: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

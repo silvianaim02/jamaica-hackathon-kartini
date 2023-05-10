@@ -1,6 +1,7 @@
 import CardItem, { articleItemPropTypes } from './ArticleCardItem';
 import PropTypes from 'prop-types';
 import SkeletonArticle from './SkeletonArticle';
+import { ImFileEmpty } from 'react-icons/im';
 
 const ArticleCardList = ({ articles, loading }) => {
   if (loading) {
@@ -14,7 +15,10 @@ const ArticleCardList = ({ articles, loading }) => {
   return (
     <>
       {articles.length === 0 ? (
-        <p>tidak ada artikel</p>
+        <div className="h-24 flex flex-col items-center justify-center">
+          <ImFileEmpty />
+          <p className='mt-4 font-light text-base'>Maaf, artikel tidak ditemukan</p>
+        </div>
       ) : (
         articles.map((article) => <CardItem key={article.id} {...article} />)
       )}

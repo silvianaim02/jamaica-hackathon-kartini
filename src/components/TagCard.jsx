@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 
 const TagCard = ({
   // articles,
-  // resetSearchField,
+  resetSearchField,
   uniqueFilterArrOfObj,
   loading,
+  setLoading,
   // setArticles,
   setCategoryPick,
 }) => {
@@ -22,12 +23,16 @@ const TagCard = ({
 
   const handleClickCategory = (e) => {
     e.preventDefault();
-    // resetSearchField();
+    resetSearchField();
+    setLoading(true);
     setCategoryPick(e.target.value);
+    setTimeout(() => {
+      setLoading(false);
+    }, 350);
   };
 
   return (
-    <div className="w-full bg-white shadow flex flex-col my-4 p-6">
+    <div className="w-full bg-white shadow flex flex-col mb-4 p-6">
       <p className="text-xl font-semibold pb-5 text-[#2B546A]">
         Temukan kategori yang ingin kamu cari
       </p>
@@ -65,8 +70,9 @@ const TagCard = ({
 TagCard.propTypes = {
   uniqueFilterArrOfObj: PropTypes.arrayOf(PropTypes.string).isRequired,
   loading: PropTypes.bool.isRequired,
+  setLoading: PropTypes.func.isRequired,
   // articles: PropTypes.arrayOf(PropTypes.shape(articleItemPropTypes)).isRequired,
-  // resetSearchField: PropTypes.func.isRequired,
+  resetSearchField: PropTypes.func.isRequired,
   setArticles: PropTypes.func.isRequired,
   setCategoryPick: PropTypes.func.isRequired,
 };

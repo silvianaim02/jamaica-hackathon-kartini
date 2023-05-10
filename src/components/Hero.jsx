@@ -1,7 +1,15 @@
 import PropTypes from 'prop-types';
 import SearchBar from './SearchBar';
 
-function Hero({ setArticles, setSearchField, onSearch }) {
+function Hero({
+  setArticles,
+  setSearchField,
+  onSearch,
+  onTyping,
+  setOnTyping,
+  setLoading,
+  setCategoryPick,
+}) {
   return (
     <>
       <div
@@ -32,6 +40,10 @@ function Hero({ setArticles, setSearchField, onSearch }) {
                   setArticles={setArticles}
                   setSearchField={setSearchField}
                   onSearch={onSearch}
+                  onTyping={onTyping}
+                  setOnTyping={setOnTyping}
+                  setLoading={setLoading}
+                  setCategoryPick={setCategoryPick}
                 />
               </div>
             </div>
@@ -46,6 +58,10 @@ Hero.propTypes = {
   setSearchField: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired,
   setArticles: PropTypes.func.isRequired,
+  onTyping: PropTypes.func.isRequired,
+  setOnTyping: PropTypes.func.isRequired,
+  setLoading: PropTypes.func.isRequired,
+  setCategoryPick: PropTypes.func.isRequired,
 };
 
 export default Hero;

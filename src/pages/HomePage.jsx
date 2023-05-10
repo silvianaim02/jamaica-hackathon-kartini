@@ -6,16 +6,17 @@ import ArticleCardList from '../components/ArticleCardList';
 import JoinCommunityCard from '../components/JoinCommunityCard';
 import { useSearchParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { AiFillTags } from 'react-icons/ai';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState();
+  const [onTyping, setOnTyping] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
   const keyword = searchParams.get('keyword');
   const [searchField, setSearchField] = useState(keyword ? keyword : '');
   const [categoryPick, setCategoryPick] = useState('');
 
-  // Update Keyword
   function updateKeywordUrlSearchParams(newValue) {
     setSearchParams({ keyword: newValue });
   }
@@ -28,8 +29,6 @@ const HomePage = () => {
     if (categoryPick === '') return articles;
     return item.category.includes(categoryPick);
   });
-
-  console.log(resultCategory);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -52,10 +51,11 @@ const HomePage = () => {
     return categories;
   }, []);
 
-  // const resetSearchField = () => {
-  //   updateKeywordUrlSearchParams('');
-  //   setSearchField('');
-  // };
+  const resetSearchField = () => {
+    setOnTyping('');
+    setSearchParams('');
+    setSearchField('');
+  };
 
   return (
     <>
@@ -65,6 +65,10 @@ const HomePage = () => {
         searchField={searchField}
         setSearchField={setSearchField}
         onSearch={updateKeywordUrlSearchParams}
+        setOnTyping={setOnTyping}
+        onTyping={onTyping}
+        setLoading={setLoading}
+        setCategoryPick={setCategoryPick}
       />
       {/* bagian feed */}
       <div className="container mx-auto flex flex-wrap py-6">
@@ -73,13 +77,26 @@ const HomePage = () => {
             uniqueFilterArrOfObj={uniqueFilterArrOfObj}
             loading={loading}
             // resetSearchField={resetSearchField}
+            setLoading={setLoading}
             articles={articles}
             setArticles={setArticles}
             setCategoryPick={setCategoryPick}
+            setOnTyping={setOnTyping}
+            resetSearchField={resetSearchField}
           />
           <JoinCommunityCard loading={loading} />
         </aside>
-        <section className="w-full md:w-2/3 flex flex-col items-center px-3">
+        <section className="w-full md:w-2/3 flex flex-col px-3">
+          <div className="flex gap-4 justify-between items-center">
+            {categoryPick !== '' ? (
+              <span className="flex gap-2 items-center pb-5 text-base font-medium text-[#30C8D6]">
+                <AiFillTags />
+                <p>{categoryPick}</p>
+              </span>
+            ) : (
+              <p className="text-3xl font-bold pb-5 text-[#2B546A]">Terbaru</p>
+            )}
+          </div>
           {
             <ArticleCardList
               articles={

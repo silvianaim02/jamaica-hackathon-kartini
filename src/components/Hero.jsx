@@ -1,4 +1,7 @@
-function Hero() {
+import PropTypes from 'prop-types';
+import SearchBar from './SearchBar';
+
+function Hero({ setArticles, setSearchField, onSearch }) {
   return (
     <>
       <div
@@ -25,40 +28,11 @@ function Hero() {
               </p>
 
               <div className="w-full max-w-sm mx-auto mt-6 rounded-md focus-within:ring-opacity-40">
-                <form>
-                  <label
-                    // for="default-search"
-                    className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-                  >
-                    Search
-                  </label>
-                  <div className="relative">
-                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-                      <svg
-                        aria-hidden="true"
-                        className="w-5 h-5 text-gray-500 dark:text-gray-400"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                        ></path>
-                      </svg>
-                    </div>
-                    <input
-                      type="search"
-                      id="default-search"
-                      className="block w-full p-4 pl-10 text-sm text-gray-900 rounded-full bg-[#E3EEFF]"
-                      placeholder="Search Article..."
-                      required
-                    />
-                  </div>
-                </form>
+                <SearchBar
+                  setArticles={setArticles}
+                  setSearchField={setSearchField}
+                  onSearch={onSearch}
+                />
               </div>
             </div>
           </div>
@@ -67,5 +41,11 @@ function Hero() {
     </>
   );
 }
+
+Hero.propTypes = {
+  setSearchField: PropTypes.func.isRequired,
+  onSearch: PropTypes.func.isRequired,
+  setArticles: PropTypes.func.isRequired,
+};
 
 export default Hero;

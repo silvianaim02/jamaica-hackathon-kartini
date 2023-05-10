@@ -6,7 +6,7 @@ import { postedAt } from '../utils';
 
 const ArticleCardItem = ({ id, title, body, user, createdAt }) => {
   return (
-    <article className="w-full mb-4 flex flex-col lg:flex-row lg:items-center gap-4 p-6  rounded-lg border bg-white border-gray-200 shadow-md ">
+    <article className="w-full mb-4 flex flex-col lg:flex-row lg:items-center gap-4 p-6  rounded-lg bg-white shadow ">
       {/* image */}
       <img
         className="block w-full lg:w-36 h-36 flex-none bg-cover"
@@ -24,7 +24,8 @@ const ArticleCardItem = ({ id, title, body, user, createdAt }) => {
               />
               <span className="font-medium ">{user}</span>
             </div>
-            <div className="flex items-center">
+            {/* Badges */}
+            {/* <div className="flex items-center">
               <svg
                 className="mr-1 w-3 h-3"
                 fill="currentColor"
@@ -34,14 +35,16 @@ const ArticleCardItem = ({ id, title, body, user, createdAt }) => {
                 <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"></path>
               </svg>
               Tutorial
-            </div>
+            </div> */}
           </span>
           <span className="text-sm">{postedAt(createdAt)}</span>
         </div>
         <h2 className="mb-2 text-2xl font-bold tracking-tight text-[#2B546A] ">
           <Link to={`/detail/${id}`}>{title}</Link>
         </h2>
-        <p className="mb-5 font-light text-gray-500">{body}</p>
+        <p className="mb-5 font-light text-gray-500 line-clamp-2 md:line-clamp-3">
+          {body}
+        </p>
         <div className="flex justify-between items-center text-[#6c7a9c]">
           <div className="flex gap-4">
             <div className="flex gap-1 items-center">

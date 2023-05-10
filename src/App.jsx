@@ -5,7 +5,7 @@ import EditorPage from './pages/EditorPage';
 
 function App() {
   return (
-    <div className="px-16">
+    <div className="">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailArticlePage />} />

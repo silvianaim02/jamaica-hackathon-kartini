@@ -17,17 +17,19 @@ const ArticleCardList = ({ articles, loading }) => {
       {articles.length === 0 ? (
         <div className="h-24 flex flex-col items-center justify-center">
           <ImFileEmpty />
-          <p className='mt-4 font-light text-base'>Maaf, artikel tidak ditemukan</p>
+          <p className="mt-4 font-light text-base">
+            Maaf, artikel tidak ditemukan
+          </p>
         </div>
       ) : (
-        articles.map((article) => <CardItem key={article.id} {...article} />)
+        articles?.map((article, index) => <CardItem key={index} {...article} />)
       )}
     </>
   );
 };
 
 ArticleCardList.propTypes = {
-  articles: PropTypes.arrayOf(PropTypes.shape(articleItemPropTypes)).isRequired,
+  articles: PropTypes.arrayOf(PropTypes.shape(articleItemPropTypes)),
   loading: PropTypes.bool.isRequired,
 };
 

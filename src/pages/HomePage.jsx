@@ -40,8 +40,6 @@ const HomePage = () => {
           setLoading(false);
         }, 350);
       }
-
-      console.log(res.data.articles);
     };
 
     fetchData();
@@ -81,7 +79,6 @@ const HomePage = () => {
           <TagCard
             uniqueFilterArrOfObj={uniqueFilterArrOfObj}
             loading={loading}
-            // resetSearchField={resetSearchField}
             setLoading={setLoading}
             articles={articles}
             setArticles={setArticles}

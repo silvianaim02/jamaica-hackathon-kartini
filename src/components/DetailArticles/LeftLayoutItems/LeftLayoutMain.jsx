@@ -5,8 +5,6 @@ import ProfileWriter from './ProfileWriter';
 import { articleItemPropTypes } from '../../ArticleCardItem';
 
 const LeftLayoutMain = ({ articles, user }) => {
-  // console.log(articles);
-  // console.log(user);
   return (
     <div className="col-span-2 min-h-[90vh] items-start justify-start flex flex-col w-full pt-10">
       {/**profile writer section */}
@@ -16,7 +14,7 @@ const LeftLayoutMain = ({ articles, user }) => {
         <h2 className="pt-8 font-semibold text-accent-2 text-base pb-2">
           Lihat artikel lainnya
         </h2>
-        {articles.slice(0, 3).map((article, index) => (
+        {articles?.slice(0, 3).map((article, index) => (
           <ArticlesList article={article} key={index} />
         ))}
         <Link to="/" className="pt-2 text-accent-4 text-base">

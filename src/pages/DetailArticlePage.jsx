@@ -34,8 +34,6 @@ const DetailArticlePage = () => {
           setLoading(false);
         }, 350);
       }
-
-      console.log(res.data.articles);
     };
 
     fetchData();

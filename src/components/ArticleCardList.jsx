@@ -22,7 +22,9 @@ const ArticleCardList = ({ articles, loading }) => {
           </p>
         </div>
       ) : (
-        articles?.map((article, index) => <CardItem key={index} {...article} />)
+        articles
+          ?.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .map((article, index) => <CardItem key={index} {...article} />)
       )}
     </>
   );

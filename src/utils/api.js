@@ -116,11 +116,11 @@ const api = {
     });
     const responseJson = await response.json();
 
-  if (responseJson.status !== 'success') {
-    return { error: true, data: null, msg: responseJson.msg };
-  }
+    if (responseJson.status !== 'success') {
+      return { error: true, data: null, msg: responseJson.msg };
+    }
 
-  return { error: false, msg: responseJson.msg };
+    return { error: false, msg: responseJson.msg };
   },
 };
 

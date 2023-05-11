@@ -55,15 +55,21 @@ function App() {
     );
   }
 
-  if (user === false) {
+  if (user === null) {
     return (
       <>
         <Routes>
-          <Route path="/" element={<HomePage user={user} setUser={setUser} />} />
+          <Route
+            path="/"
+            element={<HomePage user={user} setUser={setUser} />}
+          />
           <Route path="/detail/:id" element={<DetailArticlePage />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
           <Route path="/editor" element={<Navigate to="/login" replace />} />
-          <Route path="/communities" element={<Navigate to="/login" replace />} />
+          <Route
+            path="/communities"
+            element={<Navigate to="/login" replace />}
+          />
           <Route
             path="/login"
             element={<LoginPage onLogin={onLogin} replace />}

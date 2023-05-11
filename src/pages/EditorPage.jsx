@@ -3,7 +3,6 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { BiPlay } from "react-icons/bi";
 import Navbar from "../components/Navbar/NavbarMain";
-import { BiPlay } from 'react-icons/bi';
 import api from '../utils/api';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';

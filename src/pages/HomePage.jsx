@@ -34,10 +34,14 @@ const HomePage = () => {
   useEffect(() => {
     const fetchData = async () => {
       const res = await api.getAllArticles();
-      setArticles(res);
-      setTimeout(() => {
-        setLoading(false);
-      }, 350);
+      if (res.status === 'success') {
+        setArticles(res.data.articles);
+        setTimeout(() => {
+          setLoading(false);
+        }, 350);
+      }
+
+      console.log(res.data.articles);
     };
 
     fetchData();

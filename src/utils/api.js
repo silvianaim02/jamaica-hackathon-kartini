@@ -22,6 +22,48 @@ const api = {
     return { error: false, data: responseJson.data };
   },
 
+  async register({ name, email, password }) {
+    const response = await fetch(`${BASE_URL}/register`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': 'true',
+      },
+      body: JSON.stringify({ name, email, password }),
+    });
+
+    const responseJson = await response.json();
+
+    if (responseJson.status !== 'success') {
+      return { error: true, data: null, msg: responseJson.msg };
+    }
+
+    return { error: false, data: responseJson.data };
+  },
+
+  async postArticle({ title, category, body }) {
+    const response = await fetch(`${BASE_URL}/articles`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': 'true',
+      },
+      body: JSON.stringify({ title, category, body }),
+    });
+
+    const responseJson = await response.json();
+
+    if (responseJson.status !== 'success') {
+      return { error: true, data: null, msg: responseJson.msg };
+    }
+
+    return { error: false, data: responseJson.data };
+  },
+
   async showMe() {
     const response = await fetch(`${BASE_URL}/users/showMe`, {
       method: 'GET',
@@ -53,7 +95,6 @@ const api = {
   },
 
   async getArticleById(id) {
-    console.log(id);
     const response = await fetch(`${BASE_URL}/articles/${id}`, {
       method: 'GET',
       credentials: 'include',

@@ -77,11 +77,11 @@ const SearchBar = ({
 };
 
 SearchBar.propTypes = {
-  articles: PropTypes.arrayOf(PropTypes.shape(articleItemPropTypes)).isRequired,
+  articles: PropTypes.arrayOf(PropTypes.shape(articleItemPropTypes)),
   setSearchField: PropTypes.func.isRequired,
   onSearch: PropTypes.func.isRequired,
   setArticles: PropTypes.func.isRequired,
-  onTyping: PropTypes.func.isRequired,
+  onTyping: PropTypes.string,
   setOnTyping: PropTypes.func.isRequired,
   setLoading: PropTypes.func.isRequired,
   setCategoryPick: PropTypes.func.isRequired,

@@ -1,24 +1,21 @@
 import PropTypes from 'prop-types';
-// import { articleItemPropTypes } from './ArticleCardItem';
 
 const TagCard = ({
-  // articles,
   resetSearchField,
   uniqueFilterArrOfObj,
   loading,
   setLoading,
-  // setArticles,
   setCategoryPick,
 }) => {
-  const buttonSkeleton = (
-    <button
-      type="button"
-      className="py-1 px-3 mr-1 mb-1 text-xs font-medium rounded-full w-16 h-6 bg-[#E3EEFF]"
-    />
-  );
   const buttonSkeletonList = [];
   for (let i = 0; i < 5; i++) {
-    buttonSkeletonList.push(buttonSkeleton);
+    buttonSkeletonList.push(
+      <button
+        key={i}
+        type="button"
+        className="py-1 px-3 mr-1 mb-1 text-xs font-medium rounded-full w-16 h-6 bg-[#E3EEFF]"
+      />
+    );
   }
 
   const handleClickCategory = (e) => {
@@ -68,10 +65,9 @@ const TagCard = ({
 };
 
 TagCard.propTypes = {
-  uniqueFilterArrOfObj: PropTypes.arrayOf(PropTypes.string).isRequired,
+  uniqueFilterArrOfObj: PropTypes.arrayOf(PropTypes.string),
   loading: PropTypes.bool.isRequired,
   setLoading: PropTypes.func.isRequired,
-  // articles: PropTypes.arrayOf(PropTypes.shape(articleItemPropTypes)).isRequired,
   resetSearchField: PropTypes.func.isRequired,
   setArticles: PropTypes.func.isRequired,
   setCategoryPick: PropTypes.func.isRequired,

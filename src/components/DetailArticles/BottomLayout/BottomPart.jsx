@@ -1,7 +1,7 @@
 import { BiUpvote } from "react-icons/bi";
 import { FaRegCommentDots, FaShare } from "react-icons/fa";
 
-const BottomPart = () => {
+const BottomPart = ({ totalComments }) => {
   return (
     <div className="items-center justify-center flex col-span-3">
       <div className="col-span-1 flex">
@@ -14,7 +14,7 @@ const BottomPart = () => {
         <button>
           <FaRegCommentDots className="w-5 h-5 text-accent-9" />
         </button>
-        <h1 className="text-accent-2 text-sm pl-2 pr-10">10</h1>
+        <h1 className="text-accent-2 text-sm pl-2 pr-10">{totalComments}</h1>
       </div>
       
       <div className="col-span-1 flex">

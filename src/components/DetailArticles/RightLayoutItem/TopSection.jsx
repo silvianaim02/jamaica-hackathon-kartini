@@ -2,8 +2,9 @@ import { BsDot } from 'react-icons/bs';
 import Ann from '../../../assets/beauty.jpg';
 import { SlDiamond } from 'react-icons/sl';
 import { BsInstagram, BsLinkedin, BsTwitter } from "react-icons/bs";
+import { postedAt } from '../../../utils';
 
-const TopSection = () => {
+const TopSection = ({ user, createdAt }) => {
   return (
     <>
       <div className="flex items-center justify-center w-full space-x-4">
@@ -16,10 +17,10 @@ const TopSection = () => {
       </div>
       <div className="w-full space-y-1">
         <h1 className="text-base text-accent-2 font-medium">
-          Anne
+          {user}
         </h1>
         <div className="flex items-center">
-          <p className="text-accent-2 text-sm pr-6">30 Apr</p>
+          <p className="text-accent-2 text-sm pr-6">{postedAt(createdAt)}</p>
           <BsDot className='text-accent-9'/>
           <div className='flex justify-center items-center'>
             <span className='h-6 w-6 rounded-full bg-accent-9 flex justify-center items-center'>

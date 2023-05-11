@@ -5,7 +5,8 @@ import api from '../utils/api';
 import ArticleCardList from '../components/ArticleCardList';
 import JoinCommunityCard from '../components/JoinCommunityCard';
 import { useSearchParams } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavbarMain';
+import TulisButton from '../components/TulisButton';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -92,6 +93,7 @@ const HomePage = () => {
           }
         </section>
       </div>
+      <TulisButton />
     </>
   );
 };

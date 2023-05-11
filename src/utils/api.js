@@ -105,6 +105,23 @@ const api = {
     const responseJson = await response.json();
     return responseJson;
   },
+
+  async getLogout() {
+    const response = await fetch(`${BASE_URL}/auth/logout`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Access-Control-Allow-Credentials': 'true',
+      },
+    });
+    const responseJson = await response.json();
+
+  if (responseJson.status !== 'success') {
+    return { error: true, data: null, msg: responseJson.msg };
+  }
+
+  return { error: false, msg: responseJson.msg };
+  },
 };
 
 export default api;

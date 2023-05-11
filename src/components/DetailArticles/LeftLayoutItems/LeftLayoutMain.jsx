@@ -6,7 +6,7 @@ import { articleItemPropTypes } from '../../ArticleCardItem';
 
 const LeftLayoutMain = ({ articles, user }) => {
   return (
-    <div className="col-span-2 min-h-[90vh] items-start justify-start flex flex-col w-full pt-10">
+    <div className="col-span-2 min-h-[90vh] items-start justify-start flex flex-col w-full pt-4">
       {/**profile writer section */}
       <ProfileWriter user={user} />
 

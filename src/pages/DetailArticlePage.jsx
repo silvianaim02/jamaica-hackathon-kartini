@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import BottomPart from '../components/DetailArticles/BottomLayout/BottomPart';
 import LeftLayoutMain from '../components/DetailArticles/LeftLayoutItems/LeftLayoutMain';
 import RightPart from '../components/DetailArticles/RightLayoutItem/RightPart';
-import Navbar from '../components/NavbarMain';
+import Navbar from '../components/Navbar/NavbarMain';
 import api from '../utils/api';
 import { useParams } from 'react-router-dom';
 import TulisButton from '../components/TulisButton';
@@ -46,7 +46,7 @@ const DetailArticlePage = () => {
         <LoadingSpinner />
       ) : (
         <>
-          <div className="container grid grid-cols-1 xl:grid-cols-5 w-full col-span-10 mx-auto">
+          <div className="container grid grid-cols-1 xl:grid-cols-5 w-full col-span-10 mx-auto lg:px-16">
             <LeftLayoutMain articles={articles} {...article} />
             <RightPart loading={loading} setLoading={setLoading} {...article} />
           </div>

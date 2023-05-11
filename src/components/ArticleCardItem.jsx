@@ -3,6 +3,7 @@ import { FaShare } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { postedAt } from '../utils';
+import { FacebookShareButton } from "react-share";
 import htmr from 'htmr';
 
 const ArticleCardItem = ({ _id, title, body, user, createdAt }) => {
@@ -37,15 +38,22 @@ const ArticleCardItem = ({ _id, title, body, user, createdAt }) => {
         <div className="flex justify-between items-center text-[#6c7a9c]">
           <div className="flex gap-4">
             <div className="flex gap-1 items-center">
-              <BiUpvote />
-              <p>100</p>
+              <button>
+                <BiUpvote className="w-5 h-5 text-accent-8" />
+              </button>
+              <p className='text-sm text-accent-2'>100</p>
             </div>
             <div className="flex gap-1 items-center">
-              <BiCommentDots />
-              <p>10</p>
+              <button>
+                <BiCommentDots className="w-5 h-5 text-accent-9" />
+              </button>
+              <p className='text-sm text-accent-2'>10 comments</p>
             </div>
             <div className="flex gap-1 items-center text-[#90C3F0]">
-              <FaShare />
+              <FacebookShareButton url='https://programmingknowledge-jamaica.vercel.app/'>
+                <FaShare className="w-5 h-5 text-accent-2" />
+              </FacebookShareButton>
+              <p className="text-accent-2 text-sm pl-2">Share</p>
             </div>
           </div>
           <Link

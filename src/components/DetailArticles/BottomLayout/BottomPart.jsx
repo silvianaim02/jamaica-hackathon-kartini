@@ -1,10 +1,10 @@
 import { BiUpvote } from 'react-icons/bi';
 import { FaRegCommentDots, FaShare } from 'react-icons/fa';
-import ShareButton from 'react-share/lib/ShareButton';
+import { FacebookShareButton } from "react-share";
 import { articleItemPropTypes } from '../../ArticleCardItem';
 
 const BottomPart = ({ totalComments }) => {
-  const shareUrl = window.location.href;
+  // const shareUrl = window.location.href;
   return (
     <div className="items-center justify-center flex col-span-3">
       <div className="col-span-1 flex">
@@ -21,9 +21,9 @@ const BottomPart = ({ totalComments }) => {
       </div>
 
       <div className="col-span-1 flex">
-        <ShareButton url={shareUrl} network="facebook">
+        <FacebookShareButton url='https://programmingknowledge-jamaica.vercel.app/'>
           <FaShare className="w-5 h-5 text-accent-2" />
-        </ShareButton>
+        </FacebookShareButton>
         <h1 className="text-accent-2 text-sm pl-2">Share</h1>
       </div>
     </div>

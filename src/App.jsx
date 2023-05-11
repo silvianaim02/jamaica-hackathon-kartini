@@ -9,7 +9,7 @@ import api from './utils/api';
 import LoadingSpinner from './components/Loading/Loading';
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(false);
   const [initializing, setInitializing] = useState(true);
   const [loggedIn, setLoggedIn] = useState(false);
 
@@ -55,11 +55,11 @@ function App() {
     );
   }
 
-  if (user === null) {
+  if (user === false) {
     return (
       <>
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage user={user} setUser={setUser} />} />
           <Route path="/detail/:id" element={<DetailArticlePage />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
           <Route path="/editor" element={<Navigate to="/login" replace />} />
@@ -76,7 +76,7 @@ function App() {
   return (
     <div className="">
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<HomePage user={user} setUser={setUser} />} />
         <Route path="/detail/:id" element={<DetailArticlePage />} />
         <Route path="/editor" element={<EditorPage />} />
         <Route path="/communities" element={<ThreadCommunityPage />} />

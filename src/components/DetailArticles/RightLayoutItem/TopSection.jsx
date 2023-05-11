@@ -35,8 +35,8 @@ const TopSection = ({ user, createdAt }) => {
         <div className="flex space-x-4">
           <div className="flex flex-col">
             <a
-              href="https://instagram.com/rumahterapialbirru?igshid=Yzg5MTU1MDY="
-              aria-label="whatsapp"
+              href="https://linkedin.com/"
+              aria-label="linkedIn"
               className="w-10 h-10 bg-accent-4 group overflow-hidden relative shadow-lg flex items-center justify-center rounded-full"
               target="_blank"
               rel="noreferrer noopener"
@@ -50,7 +50,7 @@ const TopSection = ({ user, createdAt }) => {
           </div>
           <div className="flex flex-col">
             <a
-              href="https://instagram.com/rumahterapialbirru?igshid=Yzg5MTU1MDY="
+              href="https://www.instagram.com/"
               aria-label="insta"
               className="w-10 h-10 bg-accent-4 group overflow-hidden relative shadow-lg flex items-center justify-center rounded-full"
               target="_blank"
@@ -65,8 +65,8 @@ const TopSection = ({ user, createdAt }) => {
           </div>
           <div className="flex flex-col">
             <a
-              href="https://instagram.com/rumahterapialbirru?igshid=Yzg5MTU1MDY="
-              aria-label="mail"
+              href="https://twitter.com/"
+              aria-label="twitter"
               className="w-10 h-10 bg-accent-4 group overflow-hidden relative shadow-lg flex items-center justify-center rounded-full"
               target="_blank"
               rel="noreferrer noopener"

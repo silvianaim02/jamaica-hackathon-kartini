@@ -6,10 +6,10 @@ import ArticleCardList from '../components/ArticleCardList';
 import JoinCommunityCard from '../components/JoinCommunityCard';
 import { useSearchParams } from 'react-router-dom';
 import { AiFillTags } from 'react-icons/ai';
-import Navbar from '../components/NavbarMain';
+import Navbar from '../components/Navbar/NavbarMain';
 import TulisButton from '../components/TulisButton';
 
-const HomePage = () => {
+const HomePage = ({ user, setUser }) => {
   const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState();
   const [onTyping, setOnTyping] = useState('');
@@ -62,7 +62,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar user={user} setUser={setUser} />
       <Hero
         setArticles={setArticles}
         searchField={searchField}
@@ -74,7 +74,7 @@ const HomePage = () => {
         setCategoryPick={setCategoryPick}
       />
       {/* bagian feed */}
-      <div className="container mx-auto flex flex-wrap py-6">
+      <div className="container mx-auto flex flex-wrap py-6 lg:px-16">
         <aside className="w-full md:w-1/3 md:flex flex-col items-center px-3 hidden">
           <TagCard
             uniqueFilterArrOfObj={uniqueFilterArrOfObj}

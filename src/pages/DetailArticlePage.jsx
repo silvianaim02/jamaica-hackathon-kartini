@@ -6,7 +6,7 @@ import Navbar from '../components/NavbarMain';
 import api from '../utils/api';
 import { useParams } from 'react-router-dom';
 import TulisButton from '../components/TulisButton';
-import LoadingSpinner from '../components/DetailArticles/Loading/Loading';
+import LoadingSpinner from '../components/Loading/Loading';
 
 const DetailArticlePage = () => {
   const [loading, setLoading] = useState(true);

@@ -1,6 +1,7 @@
 import LoginInput from '../components/Login/LoginInput';
+import PropTypes from 'prop-types';
 
-const LoginPage = () => {
+const LoginPage = ({ onLogin }) => {
   return (
     <section className="flex items-center min-h-screen p-6 bg-gray-50">
       <div className="flex-1 h-1/2 max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl ">
@@ -13,11 +14,15 @@ const LoginPage = () => {
               alt="Office"
             />
           </div>
-          <LoginInput />
+          <LoginInput onLogin={onLogin} />
         </div>
       </div>
     </section>
   );
+};
+
+LoginPage.propTypes = {
+  onLogin: PropTypes.func.isRequired,
 };
 
 export default LoginPage;

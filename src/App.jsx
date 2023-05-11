@@ -2,6 +2,7 @@ import { Navigate, Route, Routes, useNavigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import DetailArticlePage from './pages/DetailArticlePage';
 import EditorPage from './pages/EditorPage';
+import ThreadCommunityPage from './pages/ThreadCommunityPage';
 import LoginPage from './pages/LoginPage';
 import { useEffect, useState } from 'react';
 import api from './utils/api';
@@ -62,6 +63,7 @@ function App() {
           <Route path="/detail/:id" element={<DetailArticlePage />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
           <Route path="/editor" element={<Navigate to="/login" replace />} />
+          <Route path="/communities" element={<Navigate to="/login" replace />} />
           <Route
             path="/login"
             element={<LoginPage onLogin={onLogin} replace />}
@@ -77,6 +79,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/detail/:id" element={<DetailArticlePage />} />
         <Route path="/editor" element={<EditorPage />} />
+        <Route path="/communities" element={<ThreadCommunityPage />} />
         <Route path="/login" element={<LoginPage onLogin={onLogin} />} />
       </Routes>
     </div>

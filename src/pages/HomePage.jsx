@@ -6,10 +6,10 @@ import ArticleCardList from '../components/ArticleCardList';
 import JoinCommunityCard from '../components/JoinCommunityCard';
 import { useSearchParams } from 'react-router-dom';
 import { AiFillTags } from 'react-icons/ai';
-import Navbar from '../components/NavbarMain';
+import Navbar from '../components/Navbar/NavbarMain';
 import TulisButton from '../components/TulisButton';
 
-const HomePage = () => {
+const HomePage = ({ user, setUser }) => {
   const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState();
   const [onTyping, setOnTyping] = useState('');
@@ -64,7 +64,7 @@ const HomePage = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar user={user} setUser={setUser} />
       <Hero
         setArticles={setArticles}
         searchField={searchField}

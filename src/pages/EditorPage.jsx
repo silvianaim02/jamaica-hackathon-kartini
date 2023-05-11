@@ -1,7 +1,7 @@
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
 import { BiPlay } from "react-icons/bi";
-import Navbar from "../components/NavbarMain";
+import Navbar from "../components/Navbar/NavbarMain";
 
 const modules = {
     toolbar: [

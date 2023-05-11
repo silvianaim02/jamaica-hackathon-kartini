@@ -1,4 +1,4 @@
-import Navbar from "../components/NavbarMain";
+import Navbar from "../components/Navbar/NavbarMain";
 import LeftPart from "../components/ThreadCommunity/LeftLayout/LeftPart";
 import RightPart from "../components/ThreadCommunity/RightLayout/RightPart";
 import { ThreadDB } from "../components/ThreadCommunity/ThreadItems";

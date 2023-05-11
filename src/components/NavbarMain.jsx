@@ -4,18 +4,10 @@ import { BiCaretDown, BiSearch } from 'react-icons/bi';
 
 const Navbar = () => {
   return (
-    <div className="w-full py-6 items-center justify-between flex">
+    <div className="container mx-auto w-full py-4 items-center justify-between flex">
       {/**Logo */}
       <div className="justify-start w-full flex space-x-4">
         <img src={Logo} alt="logo" className="w-32" />
-        <div className="pl-8 bg-gray-100 rounded-3xl lg:flex hidden space-x-4 items-center justify-start">
-          <BiSearch className="w-5 h-5 text-gray-400" />
-          <input
-            type="text"
-            placeholder="Search Artikel..."
-            className="bg-transparent outline-none text-gray-400"
-          />
-        </div>
       </div>
       <div className="items-center justify-end space-x-6 flex w-full">
         <ul className="">

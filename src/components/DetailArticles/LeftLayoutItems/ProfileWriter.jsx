@@ -10,7 +10,9 @@ const ProfileWriter = ({ user }) => {
         <span className="h-24 w-24 rounded-full bg-slate-400"></span>
       </div>
       <div className="flex items-center pt-5">
-        <h1 className="font-medium text-accent-2 text-base pr-6">{user.name}</h1>
+        <h1 className="font-medium text-accent-2 text-base pr-6">
+          {user?.name}
+        </h1>
         <BsDot className="text-accent-9" />
         <div className="flex justify-center items-center">
           <span className="h-6 w-6 rounded-full bg-accent-9 flex justify-center items-center">

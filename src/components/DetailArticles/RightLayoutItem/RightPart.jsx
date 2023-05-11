@@ -2,6 +2,7 @@ import { postedAt } from '../../../utils';
 import { articleItemPropTypes } from '../../ArticleCardItem';
 import SkeletonArticle from '../../SkeletonArticle';
 import TopSection from './TopSection';
+import htmr from 'htmr';
 
 const RightPart = ({ loading, title, body, user, createdAt }) => {
   if (loading) {
@@ -32,7 +33,7 @@ const RightPart = ({ loading, title, body, user, createdAt }) => {
           {title}
         </h1>
         <p className="text-accent-2 text-base pt-4 leading-7 text-justify">
-          {body}
+          {htmr(htmr(body))}
         </p>
       </div>
     </div>

@@ -3,6 +3,7 @@ import { FaShare } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { postedAt } from '../utils';
+import htmr from 'htmr';
 
 const ArticleCardItem = ({ _id, title, body, user, createdAt }) => {
   return (
@@ -31,7 +32,7 @@ const ArticleCardItem = ({ _id, title, body, user, createdAt }) => {
           <Link to={`/detail/${_id}`}>{title}</Link>
         </h2>
         <p className="mb-5 font-light text-gray-500 line-clamp-2 md:line-clamp-3">
-          {body}
+          {htmr(htmr(body))}
         </p>
         <div className="flex justify-between items-center text-[#6c7a9c]">
           <div className="flex gap-4">

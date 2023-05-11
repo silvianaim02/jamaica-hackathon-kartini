@@ -48,7 +48,7 @@ const DetailArticlePage = () => {
         <LoadingSpinner />
       ) : (
         <>
-          <div className="container grid grid-cols-1 xl:grid-cols-5 w-full col-span-10 mx-auto">
+          <div className="container grid grid-cols-1 xl:grid-cols-5 w-full col-span-10 mx-auto lg:px-16">
             <LeftLayoutMain articles={articles} {...article} />
             <RightPart loading={loading} setLoading={setLoading} {...article} />
           </div>

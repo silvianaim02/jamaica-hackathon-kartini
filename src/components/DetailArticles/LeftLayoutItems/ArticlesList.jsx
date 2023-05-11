@@ -23,7 +23,7 @@ const ArticlesList = ({ article }) => {
               <span className="h-6 w-6 rounded-full bg-accent-9 flex justify-center items-center">
                 <SlDiamond className="text-white w-3 h-3" />
               </span>
-              {/* <h1 className="px-2 text-accent-9 text-sm">{article.level}</h1> */}
+              <h1 className="px-2 text-accent-9 text-sm">Beginner</h1>
             </div>
             <BsDot className="text-gray-500" />
             <div className="flex justify-center items-center">

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const JoinCommunityCard = ({ loading }) => {
   const communities = [
@@ -35,12 +36,13 @@ const JoinCommunityCard = ({ loading }) => {
             <p className="font-medium text-sm py-2">
               {community.communityName}
             </p>
-            <button
+            <Link
+              to='/communities'
               type="button"
-              className="px-2 my-1.5 text-xs font-medium rounded-xl w-fit border border-[#2B546A]"
+              className="px-2 text-accent-2 items-center justify-center my-1.5 text-xs font-medium rounded-xl w-fit border border-accent-4"
             >
               Gabung
-            </button>
+            </Link>
           </div>
         ))
       )}

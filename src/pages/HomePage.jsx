@@ -76,7 +76,7 @@ const HomePage = () => {
         setCategoryPick={setCategoryPick}
       />
       {/* bagian feed */}
-      <div className="container mx-auto flex flex-wrap py-6">
+      <div className="container mx-auto flex flex-wrap py-6 lg:px-16">
         <aside className="w-full md:w-1/3 md:flex flex-col items-center px-3 hidden">
           <TagCard
             uniqueFilterArrOfObj={uniqueFilterArrOfObj}

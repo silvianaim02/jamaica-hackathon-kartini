@@ -13,7 +13,7 @@ const RightPart = ({ loading, title, body, user, createdAt }) => {
   }
 
   return (
-    <div className="col-span-3 items-start justify-start flex flex-col w-full pt-10">
+    <div className="col-span-3 items-start justify-start flex flex-col w-full pt-4">
       <div className="w-full items-start flex flex-col lg:pl-10">
         <div className="w-full space-y-5">
           <div className="flex items-center justify-center">
